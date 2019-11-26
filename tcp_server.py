@@ -15,7 +15,7 @@ print('Waiting connection...')
 
 # コネクションとクラインとの情報が返ってくる
 connection, addr = sock.accept()
-print('Connection from' = str(addr))
+print('Connection from' + str(addr))
 
 while True:
   # クライアントからデータを受信
