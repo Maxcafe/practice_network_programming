@@ -5,7 +5,7 @@ import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = ''
+host = '192.168.14.36'
 port = 50000
 
 sock.bind((host, port))
