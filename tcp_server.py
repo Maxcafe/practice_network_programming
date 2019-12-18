@@ -5,7 +5,7 @@ import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = '192.168.14.36'
+host = '127.0.0.1'
 port = 50000
 
 sock.bind((host, port))
@@ -23,13 +23,14 @@ while True:
 
   # クライアントからexitと言うデータが送られてきたら終了
   if data == b'exit':
+    print('Received a message: ' + str(data))
     break
+  elif data != '':
+    print('Received a message: ' + str(data))
 
-  print('Received a message: ' + str(data))
-
-  # クライアントにデータを送信
-  connection.send(data)
-  print('Sent a message: ' + str(data))
+    # クライアントにデータを送信
+    connection.send(data)
+    print('Sent a message: ' + str(data))
 
 # connectionとsocketをクローズ
 connection.close()

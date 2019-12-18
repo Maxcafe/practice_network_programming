@@ -5,16 +5,16 @@ import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ip = '192.168.14.20'
+ip = '127.0.0.1'
 port = 50000
 
-server = (ip. port)
+server = (ip, port)
 sock.connect(server)
 
 msg = ''
-while msg != 'exit:
+while msg != 'exit':
   # 標準入力からデータを取得
-  msg = inpur('-> ')
+  msg = input('-> ')
 
   # サーバからデータを送信
   sock.send(msg.encode())
